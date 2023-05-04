@@ -23,7 +23,8 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::middleware(['auth','isAdmin'])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('admin.index');
-     });
+    Route::get('/dashboard','App\Http\controllers\Admin\FrontendController@index');
+    Route::get('categories','App\Http\controllers\Admin\CategoryController@index');
+    Route::get('addcategory','App\Http\controllers\Admin\CategoryController@add');
+    Route::post('insert-category','App\Http\controllers\Admin\CategoryController@insert');
 });
