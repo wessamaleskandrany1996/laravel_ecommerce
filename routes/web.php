@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\CategoryController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -27,4 +28,6 @@ Route::middleware(['auth','isAdmin'])->group(function () {
     Route::get('categories','App\Http\controllers\Admin\CategoryController@index');
     Route::get('addcategory','App\Http\controllers\Admin\CategoryController@add');
     Route::post('insert-category','App\Http\controllers\Admin\CategoryController@insert');
+    Route::get('editcategory/{id}', [CategoryController::class ,'edit']);
+    Route::put('update-category/{id}',[CategoryController::class,'update']);
 });
