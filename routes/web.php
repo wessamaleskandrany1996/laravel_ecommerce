@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\ProductController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -35,4 +36,7 @@ Route::middleware(['auth','isAdmin'])->group(function () {
     Route::get('products','App\Http\controllers\Admin\ProductController@index');
     Route::get('addproduct','App\Http\controllers\Admin\ProductController@add');
     Route::post('insert-product','App\Http\controllers\Admin\ProductController@insert');
+    Route::get('editproduct/{id}', [ProductController::class ,'edit']);
+    Route::put('update-product/{id}', [ProductController::class,'update']);
+    Route::get('delete-product/{id}', [ProductController::class, 'destroy']);
 });

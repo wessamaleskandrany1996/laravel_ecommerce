@@ -23,7 +23,7 @@
                     </div>
                     <div class="col-md-6 mb-3">
                         <label for="slug">Slug</label>
-                        <input type="text" name="slug" required placeholder="Enter product slug" id="name" class="form-control">
+                        <input type="text" name="slug" required placeholder="Enter product slug" id="slug" class="form-control">
                     </div>
                     <div class="col-md-6 mb-3">
                         <label for="original_price">Original Price</label>
