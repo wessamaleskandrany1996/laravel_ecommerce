@@ -20,6 +20,12 @@
                 <li class="nav-item">
                     <a class="nav-link disabled">Disabled</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('login') }}">login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('register') }}">register</a>
+                </li>
             </ul>
         </div>
     </div>
