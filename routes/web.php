@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [FrontendController::class, 'index']);
+Route::get('category', [FrontendController::class,'category']);
 
 Auth::routes();
 
@@ -38,4 +39,6 @@ Route::middleware(['auth','isAdmin'])->group(function () {
     Route::get('editproduct/{id}', [ProductController::class ,'edit']);
     Route::put('update-product/{id}', [ProductController::class,'update']);
     Route::get('delete-product/{id}', [ProductController::class, 'destroy']);
+
+
 });
