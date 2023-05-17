@@ -36,13 +36,15 @@
             <div class="owl-carousel owl-theme">
                 @foreach ($categories as $item )
                     <div class="item">
-                        <div class="card">
-                            <img src="{{ asset('assets/uploads/category/'.$item->image) }}" height="300px" alt="{{ $item->name }}">
-                            <div class="card-body">
-                                <h5 class="text-center">{{ $item->name }}</h5>
-                                <p>{{ $item->description }}</p>
+                        <a href="{{ url('view-category/'.$item->slug) }}">
+                            <div class="card">
+                                <img src="{{ asset('assets/uploads/category/'.$item->image) }}" height="300px" alt="{{ $item->name }}">
+                                <div class="card-body">
+                                    <h5 class="text-center">{{ $item->name }}</h5>
+                                    <p>{{ $item->description }}</p>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 @endforeach
             </div>
