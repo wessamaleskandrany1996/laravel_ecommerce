@@ -31,4 +31,17 @@ class FrontendController extends Controller
             return redirect('/')->with('status',"Slug dosnot exist");
         }
     }
+    public function viewproduct($cate_slug, $prod_slug)
+    {
+        if (Category::where('slug', $cate_slug)->exists()) {
+            if (Product::where('slug', $prod_slug)->exists()){
+                $products = Product::where('slug', $prod_slug)->first();
+                return view('frontend.products.product',compact('products'));
+            }else{
+                return redirect('/')->with('status',"the link was broken");
+            }
+        }else{
+            return redirect('/')->with('status',"no such category found");
+        }
+    }
 }
