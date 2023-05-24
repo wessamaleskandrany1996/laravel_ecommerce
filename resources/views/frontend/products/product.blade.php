@@ -7,7 +7,7 @@
         </div>
     </div>
     <div class="container">
-        <div class="card shadow">
+        <div class="card shadow product_data">
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-4 border-right">
@@ -33,18 +33,21 @@
                             <label class="badge bg-danger">Out Of Stock</label>
                         @endif
                         <div class="row mt-2">
-                            <div class="col-md-2">
+                            <div class="col-md-3">
+                                <input type="hidden" value="{{ $products->id }}" class="prod_id">
                                 <label for="Quantity">Quantity</label>
-                                <div class="input-group text-center mb-3">
-                                    <span class="input-group-text">-</span>
-                                    <input type="text" name="quantity" value="1" id="Quantity" class="form-control">
-                                    <span class="input-group-text">+</span>
+                                <div class="input-group text-center mb-3" style="widows: 130px;">
+                                    <span class="input-group-text decrement-btn pointer">-</span>
+                                    <input type="text" name="quantity" value="1" id="Quantity" class="form-control text-center qty-input">
+                                    <span class="input-group-text increment-btn pointer">+</span>
                                 </div>
                             </div>
                             <div class="col-md-10">
                                 <br/>
-                                <button type="button" class="btn btn-success me-3 float-start">Add To Wish List</button>
-                                <button type="button" class="btn btn-primary me-3 float-start">Add To Cart</button>
+                                @if ($products->qty > 0)
+                                    <button type="button" class="btn btn-primary me-3 addToCartbtn float-start">Add To Cart <i class="fa fa-shopping-cart"></i></button>
+                                @endif
+                                <button type="button" class="btn btn-success me-3 float-start">Add To Wish List <i class="fa fa-heart"></i></button>
                             </div>
                         </div>
                     </div>

@@ -12,10 +12,14 @@
     </title>
 
     <!-- Fonts and icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css" integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm" crossorigin="anonymous">
+
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
 
-
+    {{-- google fonts --}}
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
     <!-- style -->
     <link href="{{ asset('frontend/css/bootstarp5.css') }}" rel="stylesheet">
     <link href="{{ asset('frontend/css/custom.css') }}" rel="stylesheet">
@@ -40,6 +44,7 @@
      {{-- owl carousel --}}
      <script src="{{ asset('frontend/js/jquery-3.6.4.min.js') }}" ></script>
      <script src="{{ asset('frontend/js/owl.carousel.min.js') }}" ></script>
+     <script src="{{ asset('frontend/js/custom.js') }}" ></script>
 
     <!--   Core JS Files   -->
         <script src="{{ asset('frontend/js/bootstrap.bundle.min.js') }}" defer></script>

@@ -15,6 +15,9 @@
                     <a class="nav-link" href="{{ url('category') }}">Categories</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="{{ url('cart') }}">Cart</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="{{ url('login') }}">login</a>
                 </li>
                 <li class="nav-item">
