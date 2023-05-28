@@ -40,10 +40,19 @@ class CheckoutController extends Controller
         $order->state = $request->input('state');
         $order->country = $request->input('country');
         $order->pincode = $request->input('pincode');
+
+        $total = 0;
+        $cartItems_total = Cart::where('user_id', Auth::id())->get();
+        foreach ($cartItems_total as $prod) {
+            $total += $prod->products->selling_price;
+        }
+        $order->total_price = $total;
         $order->tracking_no = 'wesso'.rand(1111,9999);
         $order->save();
         $order->id;
+        
         $cartItems = Cart::where('user_id', Auth::id())->get();
+
         foreach($cartItems as $item )
         {
             OrderItem::create([
