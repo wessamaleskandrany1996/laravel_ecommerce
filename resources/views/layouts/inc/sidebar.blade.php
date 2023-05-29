@@ -47,6 +47,18 @@
               <p>Products</p>
             </a>
         </li>
+        <li class="nav-item {{ Request::is('orders') ? 'active':'' }} ">
+            <a class="nav-link" href="{{ url("orders") }}">
+              <i class="material-icons">content_paste</i>
+              <p>Orders</p>
+            </a>
+          </li>
+          <li class="nav-item {{ Request::is('users') ? 'active':'' }} ">
+            <a class="nav-link" href="{{ url("users") }}">
+              <i class="material-icons">group</i>
+              <p>Users</p>
+            </a>
+          </li>
       </ul>
     </div>
   </div>
