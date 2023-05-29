@@ -17,7 +17,7 @@
             <p>Dashboard</p>
           </a>
         </li>
-        <li class="nav-item {{ Request::is('users') ? 'active':'' }}">
+        <li class="nav-item {{ Request::is('user') ? 'active':'' }}">
           <a class="nav-link" href="#">
             <i class="material-icons">person</i>
             <p>User Profile</p>
