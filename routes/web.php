@@ -9,6 +9,7 @@ use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\CheckoutController;
 use App\Http\Controllers\frontend\FrontendController;
 use App\Http\Controllers\Frontend\UserController;
+use App\Http\Controllers\Frontend\WishlistController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -32,7 +33,11 @@ Route::get('view-category/{cate_slug}/{prod_slug}', [FrontendController::class,'
 Auth::routes();
 
 Route::post('add-to-cart', [CartController::class, 'addproduct']);
+Route::post('add-to-wishlist', [WishlistController::class, 'add']);
 Route::post('delete-cart-item', [CartController::class, 'destroy']);
+
+Route::post('delete-wishlist-item', [WishlistController::class, 'destroy']);
+
 Route::post('update-quantity', [CartController::class, 'updateQuantity']);
 
 
@@ -44,7 +49,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('my-orders', [UserController::class, 'index']);
     Route::get('view-order/{id}', [UserController::class, 'view']);
 
-
+    Route::get('wishlist', [WishlistController::class, 'index']);
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
